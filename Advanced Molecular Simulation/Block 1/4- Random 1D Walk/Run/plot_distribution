@@ -1,0 +1,11 @@
+set xlabel 'position relative to starting point'
+set ylabel 'probability density'
+set title 'distribution of the position [1d random walk]'
+set key left top
+a=0.0793365
+b=0.00493586
+f(x)=a*exp(b*(x**2))
+fit f(x) 'results.dat' via a, b
+plot 'results.dat' title 'random walk' with li lw 3,f(x) title 'Gaussian fit a*exp(-b*x^2)'
+pause -1 "Hit return to continue"
+

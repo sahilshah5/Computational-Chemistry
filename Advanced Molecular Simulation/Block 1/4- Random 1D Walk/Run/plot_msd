@@ -1,0 +1,6 @@
+set xlabel 'time'
+set ylabel 'mean square displacement <r^2>'
+set title 'Mean square displacement of 1d random walk'
+set nokey
+plot 'rms.dat' with li lw 3
+pause -1 "Hit return to continue"

@@ -1,0 +1,7 @@
+set xlabel 'Number of particles'
+set ylabel 'Distribution (a.u.) '
+set title 'Distribution of N particles over p boxes'
+#set nokey
+set grid
+plot 'results.dat' notitle with li lw 2, 'analytical.dat' title 'analytical' w li lw 2
+pause -1 "Hit return to continue"

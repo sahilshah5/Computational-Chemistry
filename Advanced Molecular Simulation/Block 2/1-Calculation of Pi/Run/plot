@@ -1,0 +1,13 @@
+set xlabel 'Number of trials x 1000'
+set ylabel 'Relative error'
+set key right top box
+set key top right Left reverse width -15 box
+set grid
+set mxtics 10
+set mytics 10
+set xrange[90:110000]
+set yrange[1e-5:1e-2]
+set log
+plot 'results.dat' us 1:2 title 'error' with po lt 10 lw 2 pt 4 ps 2,0.013/sqrt(x) title '{/Symbol \265} n^{-1/2}' with li lw 3
+pause -1
+

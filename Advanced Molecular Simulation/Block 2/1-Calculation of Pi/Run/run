@@ -1,0 +1,4 @@
+#! /bin/bash -f
+#
+time ../Source/pi
+exit

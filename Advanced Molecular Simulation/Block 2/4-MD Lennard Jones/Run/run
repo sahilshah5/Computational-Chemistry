@@ -1,0 +1,29 @@
+#! /bin/bash -f
+#
+# BOX      = BOXLENGTH
+# NPART    = NUMBER OF PARTICLES
+# NSTEP    = NUMBER OF TIMESTEPS
+# NINIT    = NUMBER OF INITIALIZATION STEPS
+# TEMP     = TEMPERATURE
+# DELTAT   = TIMESTEP FOR INTEGRATION
+
+#set BOX    = 5.0
+#set NPART  = 100
+#set NSTEP  = 50000
+#set NINIT  = 5000
+#set TEMP   = 0.5
+#set DELTAT = 0.005
+
+BOX=5.0
+NPART=50
+NSTEP=50000
+NINIT=5000
+TEMP=0.5
+DELTAT=0.0045
+
+cat > input <<endofdata
+$BOX    $NPART $NSTEP  $TEMP  $DELTAT $NINIT
+endofdata
+time ../Source/md_nve
+rm input
+exit

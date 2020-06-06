@@ -1,0 +1,9 @@
+set xlabel 'Energy'
+set ylabel 'Probability'
+set nokey
+set grid
+set log
+set xrange[*:2]
+set output 'pt_energies.eps'
+set term postscript enhanced eps color solid 26
+plot 'energy_distribution.dat' us 1:2 notitle with li lw 3

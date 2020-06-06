@@ -1,0 +1,25 @@
+#! /bin/csh -f
+#
+# NPART    = NUMBER OF PARTICLES
+# NSTEP    = NUMBER OF TIMESTEPS
+# NINIT    = NUMBER OF INITIALIZATION STEPS
+# DISPMAX = MAXIMUM DISPLACEMENT
+# VOLMAX  = MAXIMUM VOLUME CHANGE
+# BETA     = INVERSE TEMPERATURE
+# PRESSURE = PRESURE
+
+set NSTEP     = 2000
+set NINIT     = 200
+set NPART     = 100
+set DISPMAX  = 1.0
+set VOLMAX   = 0.01
+set BETA      = 1.0
+
+foreach PRESSURE (1.0 )
+cat > input <<endofdata
+$NSTEP $NINIT $NPART $DISPMAX $VOLMAX $BETA $PRESSURE
+endofdata
+time ../Source/mc_npt
+end
+rm input
+exit

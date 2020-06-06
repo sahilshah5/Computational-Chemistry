@@ -1,0 +1,21 @@
+# gnuplot script for the photon gas
+#
+# Plots the computed values vs. the theoretical values
+
+# set labels
+set xlabel 'Inverse temperature beta = 1 / T'
+set ylabel 'Average occupancy'
+set title 'Photon gas'
+
+# define theoretical function
+f(x) = 1.0 / (exp( x ) - 1.0)
+
+# set the range of x-values
+set xrange [0.0:5.0]
+set yrange [0:2]
+
+# plot result
+plot \
+ f(x) w l t 'Theory', \
+ 'result.dat' u 1:2 w p lt 3 ps 2 pt 6 t 'Simulation'
+pause -1

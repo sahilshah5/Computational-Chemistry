@@ -1,0 +1,32 @@
+#! /bin/sh
+#
+
+# choose all beta*epsilon values which should be computed
+BETA_ALL="0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 2.0 3.0 4.0 5.0"
+
+# create result file
+echo "# Results for the photon gas
+# <beta> <occupancy> <rel. error>" > result.dat
+
+# run all beta values
+for BETA in $BETA_ALL;
+do
+ # print user info
+ echo "Running beta = $BETA...";
+
+ # create input
+	echo "100
+10
+$BETA
+" > beta_${BETA}.input;
+
+ # start program with this input and redirect output to log file
+ ../Source/photon < beta_${BETA}.input > beta_${BETA}.log;
+
+ # extract value from logfile
+	X=$( cat beta_${BETA}.log | awk '/Average/ { print $4; }' )
+	E=$( cat beta_${BETA}.log | awk '/Relative/ { print $4; }' )
+
+ # add values to result file
+	echo "$BETA $X $E" >> result.dat
+done

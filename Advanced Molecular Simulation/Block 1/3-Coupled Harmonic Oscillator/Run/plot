@@ -1,0 +1,8 @@
+set xlabel 'energy level'
+set ylabel 'occupation'
+set title 'Energy distribution over the harmonic oscillators'
+set nokey
+plot 'results.dat' with li lw 3
+pause -1 "Hit return to continue"
+
+

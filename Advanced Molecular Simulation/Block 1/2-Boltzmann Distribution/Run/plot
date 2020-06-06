@@ -1,0 +1,8 @@
+set xlabel 'energy level'
+set ylabel 'distribution'
+set title 'Boltzmann distribution'
+set nokey
+plot 'results.dat' with li lw 3
+pause -1 "Hit return to continue"
+
+

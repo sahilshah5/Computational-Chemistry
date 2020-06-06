@@ -1,0 +1,6 @@
+set xlabel 'position'
+set ylabel 'distribution'
+set title 'Distribution of position'
+set nokey
+plot 'density.dat' notitle with li
+pause -1 "Hit return to continue"

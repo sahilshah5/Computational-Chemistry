@@ -1,0 +1,6 @@
+set xlabel 'position'
+set ylabel 'velocity'
+set title 'Phase space trajectories'
+set nokey
+plot 'pos_vel.dat' notitle with po
+pause -1 "Hit return to continue"

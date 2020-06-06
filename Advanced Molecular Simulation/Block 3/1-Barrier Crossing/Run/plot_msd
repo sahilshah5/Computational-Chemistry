@@ -1,0 +1,6 @@
+set xlabel 'position'
+set ylabel 'msd <r^2>'
+set title 'Mean square displacement'
+set nokey
+plot 'msd.dat' notitle with li
+pause -1 "Hit return to continue"
